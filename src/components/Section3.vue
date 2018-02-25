@@ -1,0 +1,67 @@
+<template>
+	<section class="l-section section3">
+		<div class="l-section-inner l-section-inner--column">
+			<h2 class="c-section-h2"><span class="c-section-h2--orange">Содержание курса</span></h2>
+
+			<div class="c-rectangle-list">
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №1</a>
+					<div class="c-rectangle-list__item-text">Введение в курс</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №2</a>
+					<div class="c-rectangle-list__item-text">Регистрация аккаунта Google</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №3</a>
+					<div class="c-rectangle-list__item-text">Определение целей рекламной кампании и подбор ключевых запросов</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №4</a>
+					<div class="c-rectangle-list__item-text">Создание классической кампании в поисковой сети</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №5</a>
+					<div class="c-rectangle-list__item-text">Составление доступных расширений объявлений через Adwords Editor</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №6</a>
+					<div class="c-rectangle-list__item-text">Создание кампании в контекстно-медийной сети (DSK)</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №7</a>
+					<div class="c-rectangle-list__item-text">Создание кампании в<br /> контекстно-медийной<br /> сети Ремаркетинг</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №8</a>
+					<div class="c-rectangle-list__item-text">Знакомство с<br /> Google Analytics</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №9</a>
+					<div class="c-rectangle-list__item-text">Базовая оптимизация кампании в поисковой сети</div>
+				</div>
+				<div class="c-rectangle-list__item">
+					<a class="c-rectangle-list__item-rectangle" href="#">УРОК №10</a>
+					<div class="c-rectangle-list__item-text">Базовая оптимизация кампании в контекстно-медийной сети</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>
+
+<script>
+	export default {
+		name: 'Section3'
+	}
+</script>
+
+<style lang="scss">
+
+	.section3 {
+		height: 650px;
+		background: url('../assets/section3__img-bg.jpg') center no-repeat;
+		color: #FFF;
+		background-size: cover;
+	}
+
+</style>
