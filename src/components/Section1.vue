@@ -2,10 +2,10 @@
 	<section class="l-section section1">
 		<div class="l-section-inner l-section-inner--row">
 			<div class="section1__col section1__col-info">
-				<h2 class="c-section-h2 c-section-h2--small-margin">
-					<span class="c-section-h2--white"><small>Видеокурс</small></span><br/>
-					<span class="c-section-h2--orange">по настройке контекстной рекламы Google Adwords</span><br/>
-					<span class="c-section-h2--white"><small>Стоимость курса - 1200 грн.</small></span><br/>
+				<h2 class="c-section-h3 c-section-h3--small-margin">
+					<span class="c-section-h3--white"><small>Видеокурс</small></span>
+					<span class="c-section-h3--orange">по настройке контекстной рекламы Google Adwords</span>
+					<span class="c-section-h3--white"><small>Стоимость курса - 1200 грн.</small></span>
 				</h2>
 
 				<p class="section1__col-info-text">Обучающий видеокурс по настройке и оптимизации контекстной рекламы Google Adwords для начинающих пользователей. Получите необходимые знания для быстрого запуска эффективных рекламных кампаний и получайте новых клиентов из интернета для себя или своих клиентов. Уже более 100 предпринимателей, маркетологов и специалистов по контекстной рекламе применили полученные знания на практике</p>
@@ -45,6 +45,7 @@
 				@media screen and (max-width: 768px) {
 					flex: auto;
 					margin-bottom: 7vh;
+					align-items: center;
 				}
 
 			}

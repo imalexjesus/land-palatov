@@ -60,7 +60,8 @@
 
 				@media screen and (max-width: 768px) {
 					flex: auto;
-					margin-bottom: 7vh;
+					//margin-bottom: 7vh;
+					margin: 3.5vh 0;
 				}
 			}
 

@@ -144,7 +144,8 @@ a, button, input {
 	@media screen and (max-width: 768px) {
 		font-size: 1.8em;
 		text-align: center;
-		margin-bottom: 1.2em;
+		//margin-bottom: 1.2em;
+		margin: 0;
 	}
 
 	small {
@@ -170,14 +171,24 @@ a, button, input {
 	flex-flow: row wrap;
 	justify-content: space-between;
 
+	@media screen and (max-width: 768px) {
+		//justify-content: space-around;
+	}
+
 	&__item {
 		flex: 0 0 150px;
 		font-size: 18px;
 		text-align: center;
 
 		@media screen and (max-width: 768px) {
-			flex: 0 0 100%;
+			//flex: 0 0 40%;
 			margin-bottom: 30px;
+
+			//последний нечетный по центру
+			&:last-child:nth-child(2n+1) {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 
 		&:nth-child(2n) {
@@ -188,6 +199,7 @@ a, button, input {
 			}
 
 		}
+
 	}
 
 	&__item-square {
@@ -205,6 +217,8 @@ a, button, input {
 		text-align: center;
 
 		@media screen and (max-width: 768px) {
+			font-size: 1em !important;
+			width: auto !important;
 			margin: 0 auto;
 		}
 	}
@@ -222,14 +236,25 @@ a, button, input {
 	flex-flow: row wrap;
 	justify-content: space-between;
 
+	@media screen and (max-width: 768px) {
+		//justify-content: space-around;
+	}
+
 	&__item {
 		flex: 0 0 20%;
 		text-align: center;
 		font-size: 18px;
 
 		@media screen and (max-width: 768px) {
-			flex: 0 0 100%;
+			//flex: 0 0 40%;
+			//flex: 0 0 150px;
 			margin-bottom: 30px;
+
+			//последний нечетный по центру
+			&:last-child:nth-child(2n+1) {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 
 		&:nth-child(2n) {
@@ -267,14 +292,24 @@ a, button, input {
 		margin: 0 auto 30px;
 
 		@media screen and (max-width: 768px) {
-			margin-top: 0;
+			width: auto !important;
+			margin: 0 auto;
 		}
 	}
 
 }
 
 .c-modal {
-	&__form {
+	font-size: 14px;
+
+	.c-section-h2 {
+		font-size: 2em;
+		margin: 0 auto 1em;
+		text-align: center;
+	}
+
+	&__form,
+	&__uroki {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -355,4 +390,14 @@ a, button, input {
 	//border: 5px solid $color-orange;
 	outline: 5px solid $color-orange;
 	outline-offset: -5px;
+}
+
+
+.uk-close {
+	color: #fc3;
+	border: 2px solid;
+}
+
+.uk-modal {
+
 }

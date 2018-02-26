@@ -50,6 +50,10 @@
 			&-info-text {
 				margin-bottom: 3.5em;
 				color: $body-color;
+
+				@media screen and (max-width: 768px) {
+					margin: 0;
+				}
 			}
 
 			&-video {

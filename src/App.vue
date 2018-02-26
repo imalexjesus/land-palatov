@@ -10,8 +10,9 @@
 		<SectionPreFooter />
 		<Footer />
 		<!--<router-view></router-view>-->
-		<ModalKonsultaciya />
-		<ModalKupitVideokurs />
+		<ModalKonsultaciya class="c-modal" />
+		<ModalKupitVideokurs class="c-modal" />
+		<ModalUroki />
 
 		<!--<div id="offcanvas" uk-offcanvas="mode: push; overlay: true" class="uk-offcanvas">
 			&lt;!&ndash; мобильное меню &ndash;&gt;
@@ -46,6 +47,7 @@
 
 	const ModalKonsultaciya = () => import('@/components/modals/ModalKonsultaciya')
 	const ModalKupitVideokurs = () => import('@/components/modals/ModalKupitVideokurs')
+	const ModalUroki = () => import('@/components/modals/ModalUroki')
 
 	export default {
 		name: 'app',
@@ -60,7 +62,8 @@
 			SectionPreFooter,
 			Footer,
 			ModalKonsultaciya,
-			ModalKupitVideokurs
+			ModalKupitVideokurs,
+			ModalUroki
 		}
 	}
 </script>
