@@ -2,7 +2,11 @@
 	<section class="l-section section1">
 		<div class="l-section-inner l-section-inner--row">
 			<div class="section1__col section1__col-info">
-				<h2 class="c-section-h2 c-section-h2--small-margin " title="Видеокурс по базовой настройке прибыльной контекстной рекламы Google Adwords. Стоимость курса - 1200 грн."><span class="c-section-h2--white"><small>Видеокурс</small></span><br/><span class="c-section-h2--orange">контекстная реклама</span></h2>
+				<h2 class="c-section-h2 c-section-h2--small-margin">
+					<span class="c-section-h2--white"><small>Видеокурс</small></span><br/>
+					<span class="c-section-h2--orange">по настройке контекстной рекламы Google Adwords</span><br/>
+					<span class="c-section-h2--white"><small>Стоимость курса - 1200 грн.</small></span><br/>
+				</h2>
 
 				<p class="section1__col-info-text">Обучающий видеокурс по настройке и оптимизации контекстной рекламы Google Adwords для начинающих пользователей. Получите необходимые знания для быстрого запуска эффективных рекламных кампаний и получайте новых клиентов из интернета для себя или своих клиентов. Уже более 100 предпринимателей, маркетологов и специалистов по контекстной рекламе применили полученные знания на практике</p>
 				<button class="c-section-button" type="button" uk-toggle="target: #c-modal-kupit-videokurs">Купить видеокурс</button>
