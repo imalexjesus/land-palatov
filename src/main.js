@@ -5,9 +5,9 @@ import App from './App'
 import VueRouter from 'vue-router'
 
 import '@/styles/_reboot.scss'
+import 'font-awesome/scss/font-awesome.scss'
 import '@/styles/uikit-loader.scss'
 import '@/styles/style.scss'
-import 'font-awesome/scss/font-awesome.scss'
 
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'

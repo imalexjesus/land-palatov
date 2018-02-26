@@ -62,12 +62,12 @@
 		}
 
 		&__icon {
-			width: 48px;
-			height: 48px;
+			width: 48px !important;
+			height: 48px !important;
 			background: #252525;
 			color: #ffffff;
-			font-size: 2rem;
-			display: inline-flex;
+			font-size: 2rem !important;
+			display: inline-flex !important;
 			justify-content: center;
 			align-items: center;
 		}
