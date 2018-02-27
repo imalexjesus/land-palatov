@@ -99,13 +99,13 @@
 
 	@media screen and (max-width: 768px) {
 		.c-button {
-			width: 105px;
-			font-size: 0.8em;
-			margin-left: 0;
-			line-height: 1.4;
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
+			width: 105px !important;
+			font-size: 0.8em !important;
+			margin-left: 0 !important;
+			line-height: 1.4 !important;
+			display: inline-flex !important;
+			justify-content: center !important;
+			align-items: center !important;
 		}
 
 	}
