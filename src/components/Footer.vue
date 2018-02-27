@@ -2,13 +2,13 @@
 	<header class="c-footer l-section">
 		<div class="c-footer__inner l-section-inner">
 			<a href="/" class="c-footer__logo"></a>
-			<div class="c-footer__emails">
+			<div class="c-footer__emails uk-visible@m">
 				<i class="fa fa-envelope-o c-footer__icon" aria-hidden="true"></i>
 				<div class="c-footer__emails-list">
 					<a href="mailto:info@ppc-start.com.ua">info@ppc-start.com.ua</a>
 				</div>
 			</div>
-			<div class="c-footer__phones">
+			<div class="c-footer__phones uk-visible@m">
 				<i class="fa fa-phone c-footer__icon" aria-hidden="true"></i>
 				<div class="c-footer__phones-list">
 					<a href="tel:380634819393">+38 (063) 481 93 93</a>
@@ -37,6 +37,11 @@
 			flex-flow: row;
 			justify-content: flex-start;
 			align-items: center;
+
+			@media screen and (max-width: 768px) {
+					flex-flow: row nowrap !important;
+					justify-content: space-between;
+				}
 		}
 
 		&__logo {
@@ -47,8 +52,9 @@
 			margin-right: auto;
 
 			@media screen and (max-width: 768px) {
-				margin: 5px auto;
-			}
+					//margin: 5px 10px 5px auto;
+					margin: 5px 0;
+				}
 		}
 
 		&__logo:hover {
@@ -56,12 +62,12 @@
 		}
 
 		&__icon {
-			width: 48px;
-			height: 48px;
+			width: 48px !important;
+			height: 48px !important;
 			background: #252525;
 			color: #ffffff;
-			font-size: 2rem;
-			display: inline-flex;
+			font-size: 2rem !important;
+			display: inline-flex !important;
 			justify-content: center;
 			align-items: center;
 		}
@@ -74,7 +80,6 @@
 			margin-right: 50px;
 
 			@media screen and (max-width: 768px) {
-				display: none;
 			}
 		}
 
@@ -85,7 +90,6 @@
 			margin-left: 12px;
 
 			@media screen and (max-width: 768px) {
-				display: none;
 			}
 		}
 

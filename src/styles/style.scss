@@ -152,7 +152,7 @@ a, button, input {
 		font-size: 0.66em;
 		display: block;
 		line-height: 1.2;
-		margin: 0.5em 0;
+		margin: 0.2em 0;
 	}
 
 	&--orange {
@@ -181,7 +181,8 @@ a, button, input {
 		text-align: center;
 
 		@media screen and (max-width: 768px) {
-			//flex: 0 0 40%;
+			width: 140px;
+			flex: 0 0 140px;
 			margin-bottom: 30px;
 
 			//последний нечетный по центру
@@ -210,6 +211,11 @@ a, button, input {
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 30px;
+
+		@media screen and (max-width: 768px) {
+			width: 140px;
+			height: 140px;
+		}
 	}
 
 	&__item-text {
@@ -276,6 +282,10 @@ a, button, input {
 		justify-content: center;
 		margin-bottom: 20px;
 		border: 2px solid;
+
+		@media screen and (max-width: 768px) {
+			width: 140px;
+		}
 
 		&:hover {
 			color: $body-color;

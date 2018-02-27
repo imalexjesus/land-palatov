@@ -14,15 +14,15 @@
 				</div>
 				<div class="c-rectangle-list__item">
 					<a class="c-rectangle-list__item-rectangle" uk-toggle  href="#c-modal-urok3">УРОК №3</a>
-					<div class="c-rectangle-list__item-text">Определение целей рекламной кампании и подбор ключевых запросов</div>
+					<div class="c-rectangle-list__item-text">Определение целей и подбор ключевых запросов</div>
 				</div>
 				<div class="c-rectangle-list__item">
 					<a class="c-rectangle-list__item-rectangle" uk-toggle  href="#c-modal-urok4">УРОК №4</a>
-					<div class="c-rectangle-list__item-text">Создание классической кампании в поисковой сети</div>
+					<div class="c-rectangle-list__item-text">Создание кампании в поисковой сети</div>
 				</div>
 				<div class="c-rectangle-list__item">
 					<a class="c-rectangle-list__item-rectangle" uk-toggle  href="#c-modal-urok5">УРОК №5</a>
-					<div class="c-rectangle-list__item-text">Составление доступных расширений объявлений через Adwords Editor</div>
+					<div class="c-rectangle-list__item-text">Составление расширений объявлений</div>
 				</div>
 				<div class="c-rectangle-list__item">
 					<a class="c-rectangle-list__item-rectangle" uk-toggle  href="#c-modal-urok6">УРОК №6</a>
@@ -30,7 +30,7 @@
 				</div>
 				<div class="c-rectangle-list__item">
 					<a class="c-rectangle-list__item-rectangle" uk-toggle  href="#c-modal-urok7">УРОК №7</a>
-					<div class="c-rectangle-list__item-text">Создание кампании в<br /> контекстно-медийной<br /> сети Ремаркетинг</div>
+					<div class="c-rectangle-list__item-text">Создание кампании Ремаркетинг</div>
 				</div>
 				<div class="c-rectangle-list__item">
 					<a class="c-rectangle-list__item-rectangle" uk-toggle  href="#c-modal-urok8">УРОК №8</a>

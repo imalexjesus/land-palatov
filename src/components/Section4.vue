@@ -55,6 +55,11 @@
 	.section4 .c-square-list__item-text {
 		font-size: 14px;
 		width: 180px;
+
+		@media screen and (max-width: 768px) {
+			//width: 140px !important;
+			font-size: 0.8em !important;
+		}
 	}
 
 </style>

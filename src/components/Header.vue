@@ -1,16 +1,14 @@
 <template>
 	<header class="c-header l-section">
 		<div class="c-header__inner l-section-inner">
-			<a uk-navbar-toggle-icon href="#offcanvas" uk-toggle class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"></a>
-
 			<a href="/" class="c-header__logo"></a>
-			<div class="c-header__emails">
-				<i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i>
+			<div class="c-header__emails uk-visible@m">
+				<a href="mailto:info@ppc-start.com.ua"><i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
 				<div class="c-header__emails-list">
 					<a href="mailto:info@ppc-start.com.ua">info@ppc-start.com.ua</a>
 				</div>
 			</div>
-			<div class="c-header__phones">
+			<div class="c-header__phones uk-visible@m">
 				<i class="fa fa-phone c-header__icon" aria-hidden="true"></i>
 				<div class="c-header__phones-list">
 					<a href="tel:380634819393">+38 (063) 481 93 93</a>
@@ -42,6 +40,7 @@
 
 			@media screen and (max-width: 768px) {
 				flex-flow: row nowrap !important;
+				justify-content: space-between;
 			}
 		}
 
@@ -53,7 +52,8 @@
 			margin-right: auto;
 
 			@media screen and (max-width: 768px) {
-				margin: 5px 10px 5px auto;
+				//margin: 5px 10px 5px auto;
+				margin: 5px 0;
 			}
 
 			&:hover {
@@ -80,7 +80,7 @@
 			margin-right: 50px;
 
 			@media screen and (max-width: 768px) {
-				display: none;
+				margin: 0;
 			}
 		}
 
@@ -99,7 +99,13 @@
 
 	@media screen and (max-width: 768px) {
 		.c-button {
-			display: none;
+			width: 105px;
+			font-size: 0.8em;
+			margin-left: 0;
+			line-height: 1.4;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 	}

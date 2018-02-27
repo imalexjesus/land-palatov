@@ -12,6 +12,7 @@
 		<!--<router-view></router-view>-->
 		<ModalKonsultaciya class="c-modal" />
 		<ModalKupitVideokurs class="c-modal" />
+		<ModalUsloviyaPokupki class="c-modal" />
 		<ModalUroki />
 
 		<!--<div id="offcanvas" uk-offcanvas="mode: push; overlay: true" class="uk-offcanvas">
@@ -47,6 +48,7 @@
 
 	const ModalKonsultaciya = () => import('@/components/modals/ModalKonsultaciya')
 	const ModalKupitVideokurs = () => import('@/components/modals/ModalKupitVideokurs')
+	const ModalUsloviyaPokupki = () => import('@/components/modals/ModalUsloviyaPokupki')
 	const ModalUroki = () => import('@/components/modals/ModalUroki')
 
 	export default {
@@ -63,6 +65,7 @@
 			Footer,
 			ModalKonsultaciya,
 			ModalKupitVideokurs,
+			ModalUsloviyaPokupki,
 			ModalUroki
 		}
 	}

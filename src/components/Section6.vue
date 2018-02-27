@@ -5,7 +5,7 @@
 
 			<div class="l-section-inner l-section-inner--row">
 
-				<div class="section6__col section6__col-video">
+				<div class="section6__col section6__col-author">
 					<img class="u-outline-orange" src="../assets/section6__img-author.jpg" alt="Дмитрий Палатов">
 				</div>
 
@@ -56,8 +56,8 @@
 				}
 			}
 
-			&-video {
-				flex: 0 0 470px;
+			&-author {
+				flex: 0 0 340px;
 
 				@media screen and (max-width: 768px) {
 					flex: auto;

@@ -2,15 +2,21 @@
 	<section class="l-section section1">
 		<div class="l-section-inner l-section-inner--row">
 			<div class="section1__col section1__col-info">
-				<h2 class="c-section-h3 c-section-h3--small-margin">
+				<h3 class="c-section-h3 c-section-h3--small-margin">
 					<span class="c-section-h3--white"><small>Видеокурс</small></span>
 					<span class="c-section-h3--orange">по настройке контекстной рекламы Google Adwords</span>
 					<span class="c-section-h3--white"><small>Стоимость курса - 1200 грн.</small></span>
-				</h2>
+				</h3>
+				<p class="section1__col-info-text">Обучающий видеокурс по настройке и оптимизации контекстной рекламы Google Adwords для начинающих пользователей.
 
-				<p class="section1__col-info-text">Обучающий видеокурс по настройке и оптимизации контекстной рекламы Google Adwords для начинающих пользователей. Получите необходимые знания для быстрого запуска эффективных рекламных кампаний и получайте новых клиентов из интернета для себя или своих клиентов. Уже более 100 предпринимателей, маркетологов и специалистов по контекстной рекламе применили полученные знания на практике</p>
+					<a href="#" class="uk-hidden@m section1__toggle-btn" uk-toggle="target: .section1__toggle-text; animation: uk-animation-fade">Подробнее</a>
+
+					<span class="section1__toggle-text" hidden>Получите необходимые знания для быстрого запуска эффективных рекламных кампаний и получайте новых клиентов из интернета для себя или своих клиентов. Уже более 100 предпринимателей, маркетологов и специалистов по контекстной рекламе применили полученные знания на практике</span>
+					<span class="uk-visible@m">Получите необходимые знания для быстрого запуска эффективных рекламных кампаний и получайте новых клиентов из интернета для себя или своих клиентов. Уже более 100 предпринимателей, маркетологов и специалистов по контекстной рекламе применили полученные знания на практике</span>
+
+				</p>
 				<button class="c-section-button" type="button" uk-toggle="target: #c-modal-kupit-videokurs">Купить видеокурс</button>
-				<a href="#" class="c-section-link-at-button">Условия покупки</a>
+				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button">Условия покупки</a>
 			</div>
 
 			<div class="section1__col section1__col-video">
@@ -34,6 +40,14 @@
 		color: #FFF;
 		background-size: cover;
 
+		.section1__toggle-btn {
+			color: coral;
+		}
+
+		&__toggle-text {
+			display: block;
+		}
+
 		&__col {
 			display: flex;
 			flex-direction: column;
@@ -51,7 +65,7 @@
 			}
 
 			&-info-text {
-				margin-bottom: 3.5em;
+				margin-top: 0;
 			}
 
 			&-video {
