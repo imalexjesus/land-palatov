@@ -1,8 +1,7 @@
 <template>
-	<section class="l-section section5">
+	<section class="l-section section5" uk-scrollspy="target: > div > div > .c-square-list__item; cls: uk-animation-slide-bottom; delay: 500">
 		<div class="l-section-inner l-section-inner--column">
 			<h2 class="c-section-h2"><span class="c-section-h2--orange">Дополнительные плюшки</span></h2>
-
 
 			<div class="c-square-list">
 				<div class="c-square-list__item">

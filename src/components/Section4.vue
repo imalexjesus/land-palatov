@@ -1,5 +1,5 @@
 <template>
-	<section class="l-section section4">
+	<section class="l-section section4" uk-scrollspy="target: > div > div > .c-square-list__item; cls: uk-animation-slide-left; delay: 500">
 		<div class="l-section-inner l-section-inner--column">
 			<h2 class="c-section-h2">Какие <span class="c-section-h2--orange"> знания и умения вы получите</span></h2>
 

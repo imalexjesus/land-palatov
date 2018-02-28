@@ -1,7 +1,8 @@
 <template>
-	<section class="l-section section2">
+	<section class="l-section section2" uk-scrollspy="target: > div > div > .c-square-list__item; cls: uk-animation-slide-left; delay: 500">
 		<div class="l-section-inner l-section-inner--column">
-			<h2 class="c-section-h2"><span class="c-section-h2--orange">Преимущества</span> моего видеокурса</h2>
+			<h2 class="c-section-h2">
+				<span class="c-section-h2--orange">Преимущества</span> моего видеокурса</h2>
 
 			<div class="c-square-list">
 				<div class="c-square-list__item">
@@ -41,9 +42,19 @@
 </template>
 
 <script>
+	import UIkit from 'uikit'
+
 	export default {
 		name: 'Section2'
 	}
+
+	UIkit.scrollspy('.c-square-list', {
+		cls: 'uk-animation-scale-down',
+		target: '> .c-square-list__item',
+		// closest: '> .c-square-list__item',
+		delay: 400,
+		repeat: false
+	})
 </script>
 
 <style lang="scss">

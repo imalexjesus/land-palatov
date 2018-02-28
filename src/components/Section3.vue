@@ -1,5 +1,5 @@
 <template>
-	<section class="l-section section3">
+	<section class="l-section section3" uk-scrollspy="target: > div > div > .c-rectangle-list__item; cls: uk-animation-slide-right; delay: 400" uk-parallax="bgx: -200">
 		<div class="l-section-inner l-section-inner--column">
 			<h2 class="c-section-h2"><span class="c-section-h2--orange">Содержание курса</span></h2>
 

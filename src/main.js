@@ -38,7 +38,7 @@ new Vue({
 	},
 	template: '<App/>'
 })
-
+/*
 UIkit.scrollspy('.l-section', {
 	cls: 'uk-animation-slide-left',
 	target: '.c-section-h2',
@@ -52,5 +52,6 @@ UIkit.scrollspy('.c-square-list', {
 	target: '> .c-square-list__item',
 	// closest: '> .c-square-list__item',
 	delay: 400,
-	repeat: false
+	repeat: true
 })
+*/
