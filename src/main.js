@@ -40,20 +40,3 @@ new Vue({
 	},
 	template: '<App/>'
 })
-/*
-UIkit.scrollspy('.l-section', {
-	cls: 'uk-animation-slide-left',
-	target: '.c-section-h2',
-	// closest: '.c-section-h2',
-	delay: 400,
-	repeat: true
-})
-
-UIkit.scrollspy('.c-square-list', {
-	cls: 'uk-animation-scale-down',
-	target: '> .c-square-list__item',
-	// closest: '> .c-square-list__item',
-	delay: 400,
-	repeat: true
-})
-*/
