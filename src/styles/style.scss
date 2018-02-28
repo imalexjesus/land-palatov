@@ -325,7 +325,11 @@ a, button, input {
 		align-items: center;
 		padding: 3em;
 
-		input {
+		@media screen and (max-width: 768px) {
+			padding: .5em;
+		}
+
+		.c-section-input {
 			margin-bottom: 1rem;
 			color: $body-color;
 
