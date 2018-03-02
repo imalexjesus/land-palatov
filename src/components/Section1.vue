@@ -58,14 +58,15 @@
 
 				@media screen and (max-width: 768px) {
 					flex: auto;
-					margin-bottom: 7vh;
+					padding: 2vh 0 4vh;
+					//margin-bottom: 7vh;
 					align-items: center;
 				}
 
 			}
 
 			&-info-text {
-				margin-top: 0;
+				margin-top: 1vh;
 			}
 
 			&-video {
@@ -74,7 +75,8 @@
 
 				@media screen and (max-width: 768px) {
 					flex: auto;
-					margin-bottom: 7vh;
+					//margin-bottom: 7vh;
+					padding:  0 0 4vh;
 				}
 			}
 		}
