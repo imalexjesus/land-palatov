@@ -54,6 +54,12 @@ a, button, input {
 		background: repeating-linear-gradient(to right, $color-orange 0%, #ffb033 50%, $color-orange 100%) $color-orange;
 		cursor: pointer;
 	}
+
+	@media screen and (max-width: 768px) {
+		height: 42px;
+		width: auto;
+		padding: 0 auto;
+	}
 }
 
 .c-section-input {
@@ -75,6 +81,27 @@ a, button, input {
 		//background: repeating-linear-gradient(to right, $color-orange 0%, #ffb033 50%, $color-orange 100%) $color-orange;
 		//cursor: pointer;
 	}
+
+	&--success {
+		border-color: green;
+	}
+
+	&--danger {
+		border-color: red;
+	}
+
+	&--iconned {
+		@media screen and (max-width: 768px) {
+			//padding-left: 3em;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 1em;
+		height: 42px;
+		width: auto;
+		padding: 0 auto;
+	}
 }
 .c-section-link-at-button {
 	color: $color-white-dark;
@@ -85,6 +112,11 @@ a, button, input {
 
 	&:hover {
 		text-decoration: underline;
+	}
+
+	@media screen and (max-width: 768px) {
+		width: auto;
+		padding: 0 auto;
 	}
 }
 .c-section-h2 {

@@ -14,9 +14,15 @@
 			</div>
 
 			<div class="section-prefooter__col section-prefooter__col-form">
-				<input class="c-section-input" type="text" placeholder="Ваше имя">
-				<input class="c-section-input" type="email" placeholder="Ваш e-mail">
-				<input class="c-section-input" type="tel" placeholder="Ваш телефон">
+				<div>
+					<input v-validate="'required'" :class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }" name="name" class="c-section-input" type="text" placeholder="Ваше имя*">
+				</div>
+				<div>
+					<input v-validate="'required'" :class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }" name="phone" class="c-section-input" type="tel" placeholder="Ваш телефон*">
+				</div>
+				<div>
+					<input v-validate="'required|email'" :class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }" name="email" class="c-section-input" type="email" placeholder="Ваш e-mail">
+				</div>
 
 				<button class="c-section-button">Купить видеокурс</button>
 				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button">Условия покупки</a>
@@ -49,8 +55,9 @@
 
 				@media screen and (max-width: 768px) {
 					flex: auto;
-					//margin-bottom: 7vh;
-					margin: 3.5vh 0;
+					// margin-bottom: 7vh;
+					// margin: 3.5vh 0;
+					padding: 2vh 0 4vh;
 				}
 			}
 
@@ -61,7 +68,7 @@
 				@media screen and (max-width: 768px) {
 					flex: auto;
 					align-items: center;
-					margin-bottom: 7vh;
+					padding:  0 0 4vh;
 				}
 
 				input {
