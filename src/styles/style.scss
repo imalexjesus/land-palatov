@@ -31,6 +31,7 @@ a, button, input {
 
 	&:hover {
 		//background: #262626;
+		color: #FFF;
 		background: repeating-linear-gradient(to right, $body-color 0%, #3e3e3e 50%, $body-color 100%) $body-color;
 	}
 
@@ -146,7 +147,7 @@ a, button, input {
 			position: absolute;
 			content: '/';
 			font-size: 4em;
-			top: -153%;
+			top: -132%;
 			left: 31%;
 			transform: rotate(40deg) scale(0.2, 1);
 			line-height: 1.2;
@@ -348,6 +349,12 @@ a, button, input {
 		font-size: 2em;
 		margin: 0 auto 1em;
 		text-align: center;
+	}
+
+	&__form-text-danger {
+		font-size: .7em;
+		color: #f0506e;
+		max-width: 231px;
 	}
 
 	&__form,

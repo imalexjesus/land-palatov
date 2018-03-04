@@ -5,32 +5,55 @@
 
 			<form class="c-modal__form uk-form-stacked" @submit.prevent="submitForm">
 				<h2 class="c-section-h2 c-section-h2--small-margin">
-					<span class="c-section-h2--orange">консультация</span></h2>
+					<span class="c-section-h2--orange">консультация</span>
+				</h2>
 
 				<div class="uk-margin-top">
-					<label class="uk-form-label" for="form-s-text">Ваше имя</label>
+					<label class="uk-form-label" for="c-modal-konsultaciya__form-name">Ваше имя</label>
 					<div class="uk-inline">
-						<span class="uk-form-icon" uk-icon="icon: user"></span>
-						<input class="uk-input" id="form-s-text" type="text" placeholder="Ваше имя">
+						<span class="uk-form-icon uk-icon" :class="{'uk-text-danger': errors.has('name') }" uk-icon="icon: user"></span>
+						<input v-validate="'required|alpha'"
+							class="uk-input"
+							:class="{'input': true, 'uk-form-danger': errors.has('name') }"
+							id="c-modal-konsultaciya__form-name"
+							name="name"
+							v-model="postName"
+							type="text"
+						placeholder="Ваше имя">
 					</div>
+					<div v-show="errors.has('name')" class="c-modal__form-text-danger">{{ errors.first('name') }}</div>
 				</div>
 
 				<div class="uk-margin-top">
-					<label class="uk-form-label" for="form-s-email">Ваш e-mail</label>
+					<label class="uk-form-label" for="c-modal-konsultaciya__form-email">Ваш e-mail</label>
 					<div class="uk-inline">
-						<span class="uk-form-icon" uk-icon="icon: mail"></span>
-						<input v-validate="'required|email'" :class="{'input': true, 'uk-form-danger': errors.has('email') }" name="email" class="uk-input" type="email" placeholder="name@domain.com">
-
+						<span class="uk-form-icon uk-icon" uk-icon="icon: mail" :class="{'uk-text-danger': errors.has('email') }"></span>
+						<input v-validate="'required|email'"
+							class="uk-input"
+							:class="{'input': true, 'uk-form-danger': errors.has('email') }"
+							id="c-modal-konsultaciya__form-email"
+							name="email"
+							v-model="postEmail"
+							type="email"
+						placeholder="name@domain.com">
 					</div>
-					<div v-show="errors.has('email')" class="text-danger">{{ errors.first('email') }}</div>
+					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
 				</div>
 
 				<div class="uk-margin-top">
-					<label class="uk-form-label" for="form-s-tel">Ваш телефон</label>
+					<label class="uk-form-label" for="c-modal-konsultaciya__form-phone">Ваш телефон</label>
 					<div class="uk-inline">
-						<span class="uk-form-icon" uk-icon="icon: receiver"></span>
-						<input class="uk-input" id="form-s-tel" type="tel" placeholder="+38 555 123456">
+						<span class="uk-form-icon uk-icon" :class="{'uk-text-danger': errors.has('phone') }" uk-icon="icon: receiver"></span>
+						<input v-validate="'required|numeric'"
+							class="uk-input"
+							:class="{'input': true, 'uk-form-danger': errors.has('phone') }"
+							id="c-modal-konsultaciya__form-phone"
+							name="phone"
+							v-model="postPhone"
+							type="tel"
+						placeholder="+38 555 123456">
 					</div>
+					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
 				</div>
 
 				<button class="uk-button uk-button-primary uk-margin-top" :disabled="errors.any()">Получить консультацию</button>
@@ -45,18 +68,49 @@
 </template>
 
 <script>
+	import russian from 'vee-validate/dist/locale/ru'
+	import axios from 'axios'
+
 	export default {
 		name: 'ModalKonsultaciya',
+		data: () => ({
+			postName: '',
+			postEmail: '',
+			postPhone: ''
+		}),
 		methods: {
 			submitForm () {
 				this.$validator.validateAll().then(res => {
 					if (res) {
-						alert('Form successfully submitted!')
+						// Native form submission is not yet supported
+						axios.post('/send_mail.php', 'page_title=Получить консультацию (форма в шапке)' +
+							'&name=' +
+							this.postName +
+							'&email=' +
+							this.postEmail +
+							'&phone=' +
+						this.postPhone).then((res) => {
+							alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							console.log('RESPONSE RECEIVED: ', res)
+						}).catch((err) => {
+							alert('AXIOS ERROR: ', err)
+							console.log('AXIOS ERROR: ', err)
+						})
 					} else {
+						// validatoк error
 						alert('Please correct all error!')
 					}
 				})
 			}
+		},
+		created () {
+			this.$validator.localize('ru', {
+				messages: russian.messages
+			})
+			// this.errors.add('email', 'Newsletter Email is not valid', 'email', 'newsletter')
+			// this.errors.add('email', 'Newsletter Email is required', 'required', 'newsletter')
+			// this.errors.add('email', 'Email is not a valid email', 'email')
+			// this.errors.add('name', 'name is required', 'required')
 		}
 	}
 </script>

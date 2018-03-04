@@ -21,7 +21,7 @@
 					<input v-validate="'required'" :class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }" name="phone" class="c-section-input" type="tel" placeholder="Ваш телефон*">
 				</div>
 				<div>
-					<input v-validate="'required|email'" :class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }" name="email" class="c-section-input" type="email" placeholder="Ваш e-mail">
+					<input v-validate="'required|email'" :class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }" name="email" class="c-section-input" type="email" placeholder="Ваш e-mail*">
 				</div>
 
 				<button class="c-section-button">Купить видеокурс</button>
