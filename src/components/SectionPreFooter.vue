@@ -13,27 +13,99 @@
 				</h2>
 			</div>
 
-			<div class="section-prefooter__col section-prefooter__col-form">
-				<div>
-					<input v-validate="'required'" :class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }" name="name" class="c-section-input" type="text" placeholder="Ваше имя*">
-				</div>
-				<div>
-					<input v-validate="'required'" :class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }" name="phone" class="c-section-input" type="tel" placeholder="Ваш телефон*">
-				</div>
-				<div>
-					<input v-validate="'required|email'" :class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }" name="email" class="c-section-input" type="email" placeholder="Ваш e-mail*">
+			<form class="section-prefooter__col section-prefooter__col-form" @submit.prevent="submitForm">
+				<div class="uk-margin-small-bottom">
+					<input v-validate="'required|alpha'"
+							class="c-section-input"
+							:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
+							id="section-prefooter__form-name"
+							name="name"
+							v-model="postName"
+							type="text"
+						placeholder="Ваше имя*">
+					<div v-show="errors.has('name')" class="c-modal__form-text-danger">{{ errors.first('name') }}</div>
 				</div>
 
-				<button class="c-section-button">Купить видеокурс</button>
+				<div class="uk-margin-small-bottom">
+					<input v-validate="'required|numeric'"
+							class="c-section-input"
+							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
+							id="section-prefooter__form-phone"
+							name="phone"
+							v-model="postPhone"
+							type="tel"
+						placeholder="Ваш телефон*">
+					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
+				</div>
+
+				<div class="uk-margin-small-bottom">
+					<input v-validate="'required|email'"
+							class="c-section-input"
+							:class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }"
+							id="section-prefooter__form-email"
+							name="email"
+							v-model="postEmail"
+							type="email"
+						placeholder="Ваш e-mail*">
+					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
+				</div>
+
+
+				<a
+					class="c-section-button"
+					:class="{'c-section-button--disabled': errors.any() }"
+					@click.prevent="submitForm ()">Купить видеокурс</a>
+				<!-- <button class="c-section-button" :disabled="errors.any()">Купить видеокурс</button> -->
 				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button">Условия покупки</a>
-			</div>
+			</form>
 		</div>
 	</section>
 </template>
 
 <script>
+	import russian from 'vee-validate/dist/locale/ru'
+	import axios from 'axios'
+
 	export default {
-		name: 'SectionPreFooter'
+		name: 'SectionPreFooter',
+		data: () => ({
+			postName: '',
+			postEmail: '',
+			postPhone: ''
+		}),
+		methods: {
+			submitForm () {
+				this.$validator.validateAll().then(res => {
+					if (res) {
+						// Native form submission is not yet supported
+						axios.post('/send_mail.php', 'page_title=Получить консультацию (форма в префутере)' +
+							'&name=' +
+							this.postName +
+							'&email=' +
+							this.postEmail +
+							'&phone=' +
+						this.postPhone).then((res) => {
+							alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							console.log('RESPONSE RECEIVED: ', res)
+						}).catch((err) => {
+							alert('AXIOS ERROR: ', err)
+							console.log('AXIOS ERROR: ', err)
+						})
+
+						this.$router.push('https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=RLwj8Q+f9y5FAQq28HuOHewkmAE=')
+					} else {
+						// validatoк error
+						alert('Please correct all error!')
+						event.preventDefault()
+					}
+				})
+			}
+		},
+		created () {
+			this.$validator.localize('ru', {
+				messages: russian.messages
+			})
+		}
 	}
 </script>
 
@@ -72,7 +144,11 @@
 				}
 
 				input {
-					margin-bottom: .6em;
+					// margin-bottom: .6em;
+				}
+
+				.c-modal__form-text-danger {
+					margin-top: 3px;
 				}
 			}
 		}

@@ -25,7 +25,7 @@ a, button, input {
 	color: #FFF;
 	width: 270px;
 	height: 48px;
-	line-height: 48px;;
+	line-height: 48px;
 	font-size: 1rem;
 	text-align: center;
 
@@ -38,6 +38,13 @@ a, button, input {
 	&--big {
 
 	}
+
+	&--disabled {
+		background: $color-orange-muted;
+		border: darken($color-orange-muted, 20%);
+		pointer-events: none;
+  		cursor: default;
+	}
 }
 
 .c-section-button {
@@ -46,6 +53,7 @@ a, button, input {
 	color: $body-color;
 	width: 270px;
 	height: 65px;
+	line-height: 65px;
 	font-size: 1.285em;
 	text-align: center;
 	border: none;
@@ -58,8 +66,16 @@ a, button, input {
 
 	@media screen and (max-width: 768px) {
 		height: 42px;
+		line-height: 42px;
 		width: auto;
 		padding: 0 auto;
+	}
+
+	&--disabled {
+		background: $color-orange-muted;
+		border: darken($color-orange-muted, 20%);
+		pointer-events: none;
+  		cursor: default;
 	}
 }
 
