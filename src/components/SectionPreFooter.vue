@@ -27,18 +27,6 @@
 				</div>
 
 				<div class="uk-margin-small-bottom">
-					<input v-validate="'required|numeric'"
-							class="c-section-input"
-							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
-							id="section-prefooter__form-phone"
-							name="phone"
-							v-model="postPhone"
-							type="tel"
-						placeholder="Ваш телефон*">
-					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
-				</div>
-
-				<div class="uk-margin-small-bottom">
 					<input v-validate="'required|email'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }"
@@ -48,6 +36,18 @@
 							type="email"
 						placeholder="Ваш e-mail*">
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
+				</div>
+
+				<div class="uk-margin-small-bottom">
+					<input v-validate="'required|numeric'"
+							class="c-section-input"
+							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
+							id="section-prefooter__form-phone"
+							name="phone"
+							v-model="postPhone"
+							type="tel"
+						placeholder="Ваш телефон*">
+					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
 				</div>
 
 

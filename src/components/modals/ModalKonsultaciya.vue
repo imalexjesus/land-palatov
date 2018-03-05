@@ -3,7 +3,9 @@
 		<div class="uk-modal-dialog uk-margin-auto-vertical">
 			<button class="uk-modal-close-default" type="button" uk-close></button>
 
-			<form class="c-modal__form uk-form-stacked" @submit.prevent="submitForm">
+			<form class="c-modal__form uk-form-stacked"
+			@submit.prevent="submitForm"
+			v-if="showForm">
 				<h2 class="c-section-h2 c-section-h2--small-margin">
 					<span class="c-section-h2--orange">консультация</span>
 				</h2>
@@ -57,12 +59,14 @@
 				</div>
 
 				<button class="uk-button uk-button-primary uk-margin-top" :disabled="errors.any()">Получить консультацию</button>
-				<!--		<input class="c-section-input" type="text" placeholder="Ваше имя">
-						<input class="c-section-input" type="email" placeholder="Ваш e-mail">
-						<input class="c-section-input" type="tel" placeholder="Ваш телефон">
 
-				<button class="c-section-button">Получить консультацию</button>-->
 			</form>
+
+			<div class="uk-alert-success uk-margin-large uk-margin-medium-left uk-margin-medium-right" v-if="!showForm" uk-alert>
+				<h3>Отлично!</h3>
+				<p>Форма успешно отправлена</p>
+			</div>
+
 		</div>
 	</div>
 </template>
@@ -76,7 +80,8 @@
 		data: () => ({
 			postName: '',
 			postEmail: '',
-			postPhone: ''
+			postPhone: '',
+			showForm: true
 		}),
 		methods: {
 			submitForm () {
@@ -90,7 +95,8 @@
 							this.postEmail +
 							'&phone=' +
 						this.postPhone).then((res) => {
-							alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							this.showForm = false
+							// alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
 							console.log('RESPONSE RECEIVED: ', res)
 						}).catch((err) => {
 							alert('AXIOS ERROR: ', err)
@@ -114,7 +120,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-
-</style>
