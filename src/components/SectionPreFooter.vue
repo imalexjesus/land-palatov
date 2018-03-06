@@ -14,7 +14,7 @@
 			</div>
 
 			<form class="section-prefooter__col section-prefooter__col-form" @submit.prevent="submitForm">
-				<div class="uk-margin-small-bottom">
+				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|alpha'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
@@ -26,7 +26,7 @@
 					<div v-show="errors.has('name')" class="c-modal__form-text-danger">{{ errors.first('name') }}</div>
 				</div>
 
-				<div class="uk-margin-small-bottom">
+				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|email'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }"
@@ -38,7 +38,7 @@
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
 				</div>
 
-				<div class="uk-margin-small-bottom">
+				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|numeric'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
