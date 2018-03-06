@@ -15,7 +15,7 @@
 				</div>
 			</div>
 
-			<a href="#c-modal-konsultaciya" class="c-button" uk-toggle>Получить консультацию</a>
+			<a href="#c-modal-konsultaciya" class="c-button" uk-toggle>Консультация</a>
 		</div>
 	</header>
 </template>

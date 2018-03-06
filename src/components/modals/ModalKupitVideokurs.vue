@@ -1,6 +1,6 @@
 <template>
-	<div id="c-modal-kupit-videokurs" uk-modal>
-		<div class="uk-modal-dialog uk-margin-auto-vertical">
+	<div id="c-modal-kupit-videokurs" class="uk-modal-container" uk-modal>
+		<div class="uk-modal-dialog">
 			<button class="uk-modal-close-default" type="button" uk-close></button>
 
 			<div class="c-modal__form">

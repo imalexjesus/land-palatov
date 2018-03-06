@@ -3,6 +3,7 @@
 html {
 	font-size: 14px;
 }
+
 a, button, input {
 	 transition: all .35s ease-in-out !important;
 }
@@ -144,9 +145,9 @@ a, button, input {
 	margin: 50px auto .6em;
 
 	@media screen and (max-width: 768px) {
-		font-size: 2em;
+		font-size: 22px;
 		text-align: center;
-		margin: 50px auto 1.2em !important;
+		margin: 25px auto 15px !important;
 	}
 
 	small {
@@ -265,6 +266,10 @@ a, button, input {
 			width: 140px;
 			height: 140px;
 		}
+
+		.fa {
+			font-size: 74px;
+		}
 	}
 
 	&__item-text {
@@ -373,6 +378,10 @@ a, button, input {
 		max-width: 231px;
 	}
 
+	&__form {
+		margin-bottom: 3em;
+	}
+
 	&__form,
 	&__uroki {
 		display: flex;
@@ -467,6 +476,19 @@ a, button, input {
 	border: 2px solid;
 }
 
-.uk-modal {
+.uk-modal-page {
+
+	@media screen and (max-width: 768px) {
+		body {
+			overflow: hidden !important;
+			position: fixed;
+			width: 100%;
+		}
+	}
 
 }
+/*
+.uk-input {
+	line-height: 40px;
+	font-size: 14px;
+}*/

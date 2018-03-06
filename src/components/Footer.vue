@@ -14,7 +14,7 @@
 					<a href="tel:380634819393">+38 (063) 481 93 93</a>
 				</div>
 			</div>
-			<a href="#c-modal-konsultaciya" class="c-button" uk-toggle>Получить консультацию</a>
+			<a href="#c-modal-konsultaciya" class="c-button" uk-toggle>Консультация</a>
 		</div>
 
 	</header>

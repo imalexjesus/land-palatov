@@ -6,31 +6,31 @@
 			<div class="c-square-list">
 				<div class="c-square-list__item">
 					<div class="c-square-list__item-square">
-						<div class="c-square-list__item-square-num-text">1</div>
+						<i class="fa fa-sitemap"></i>
 					</div>
 					<div class="c-square-list__item-text">Настраивать рекламные кампании</div>
 				</div>
 				<div class="c-square-list__item">
 					<div class="c-square-list__item-square">
-						<div class="c-square-list__item-square-num-text">2</div>
+						<i class="fa fa-money"></i>
 					</div>
 					<div class="c-square-list__item-text">Оптимизировать платный трафик</div>
 				</div>
 				<div class="c-square-list__item">
 					<div class="c-square-list__item-square">
-						<div class="c-square-list__item-square-num-text">3</div>
+						<i class="fa fa-users"></i>
 					</div>
 					<div class="c-square-list__item-text">Контролировать подрядчиков (рекламные агентства, фрилансеры)</div>
 				</div>
 				<div class="c-square-list__item">
 					<div class="c-square-list__item-square">
-						<div class="c-square-list__item-square-num-text">4</div>
+						<i class="fa fa-line-chart"></i>
 					</div>
 					<div class="c-square-list__item-text">Выжимать больше конверсий (обращений) из рекламы</div>
 				</div>
 				<div class="c-square-list__item">
 					<div class="c-square-list__item-square">
-						<div class="c-square-list__item-square-num-text">*</div>
+						<i class="fa fa-check-circle"></i>
 					</div>
 					<div class="c-square-list__item-text">Существенно экономить бюджет не уменьшая эффективности</div>
 				</div>
