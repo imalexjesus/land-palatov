@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import VeeValidate from 'vee-validate'
+import VueTheMask from 'vue-the-mask'
 
 import '@/styles/_reboot.scss'
 import 'font-awesome/scss/font-awesome.scss'
@@ -15,6 +16,7 @@ import Icons from 'uikit/dist/js/uikit-icons'
 
 UIkit.use(Icons)
 Vue.use(VeeValidate)
+Vue.use(VueTheMask)
 
 Vue.config.productionTip = true
 

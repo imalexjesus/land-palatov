@@ -15,7 +15,7 @@
 
 			<form class="section-prefooter__col section-prefooter__col-form" @submit.prevent="submitForm">
 				<div class="uk-margin-small-bottom uk-text-center">
-					<input v-validate="'required|alpha'"
+					<input v-validate="{ required: true, regex: /^[а-яА-ЯёЁa-zA-Z0-9]+$/ }"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
 							id="section-prefooter__form-name"
@@ -23,7 +23,7 @@
 							v-model="postName"
 							type="text"
 						placeholder="Ваше имя*">
-					<div v-show="errors.has('name')" class="c-modal__form-text-danger">{{ errors.first('name') }}</div>
+					<div v-show="errors.has('name')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('name') }}</div>
 				</div>
 
 				<div class="uk-margin-small-bottom uk-text-center">
@@ -35,19 +35,21 @@
 							v-model="postEmail"
 							type="email"
 						placeholder="Ваш e-mail*">
-					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
+					<div v-show="errors.has('email')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('email') }}</div>
 				</div>
 
 				<div class="uk-margin-small-bottom uk-text-center">
-					<input v-validate="'required|numeric'"
+					<input v-validate="'required|min:15'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
 							id="section-prefooter__form-phone"
 							name="phone"
 							v-model="postPhone"
 							type="tel"
+							v-mask="'(0##) ###-##-##'"
+						masked="true"
 						placeholder="Ваш телефон*">
-					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
+					<div v-show="errors.has('phone')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('phone') }}</div>
 				</div>
 
 
@@ -85,13 +87,13 @@
 							this.postEmail +
 							'&phone=' +
 						this.postPhone).then((res) => {
-							alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							window.location = 'https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=RLwj8Q+f9y5FAQq28HuOHewkmAE='
+							// alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
 							console.log('RESPONSE RECEIVED: ', res)
 						}).catch((err) => {
 							alert('AXIOS ERROR: ', err)
 							console.log('AXIOS ERROR: ', err)
 						})
-						window.location('https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=RLwj8Q+f9y5FAQq28HuOHewkmAE=')
 					} else {
 						// validatoк error
 						alert('Please correct all error!')
@@ -147,7 +149,7 @@
 				}
 
 				.c-modal__form-text-danger {
-					margin-top: 3px;
+					margin: 3px auto 0;
 				}
 			}
 		}

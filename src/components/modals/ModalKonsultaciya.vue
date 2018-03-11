@@ -88,7 +88,7 @@
 				this.$validator.validateAll().then(res => {
 					if (res) {
 						// Native form submission is not yet supported
-						axios.post('/send_mail.php', 'page_title=Получить консультацию (форма в шапке)' +
+						axios.post('/send_mail.php', 'page_title=Получить консультацию' +
 							'&name=' +
 							this.postName +
 							'&email=' +
