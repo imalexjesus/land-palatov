@@ -1,6 +1,6 @@
 <template>
-	<div id="c-modal-konsultaciya" uk-modal>
-		<div class="uk-modal-dialog uk-margin-auto-vertical">
+	<div id="c-modal-konsultaciya" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 			<button class="uk-modal-close-default" type="button" uk-close></button>
 
 			<form class="c-modal__form uk-form-stacked"

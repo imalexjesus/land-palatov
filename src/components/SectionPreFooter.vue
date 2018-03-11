@@ -14,7 +14,7 @@
 			</div>
 
 			<form class="section-prefooter__col section-prefooter__col-form" @submit.prevent="submitForm">
-				<div class="uk-margin-small-bottom">
+				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|alpha'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
@@ -26,7 +26,7 @@
 					<div v-show="errors.has('name')" class="c-modal__form-text-danger">{{ errors.first('name') }}</div>
 				</div>
 
-				<div class="uk-margin-small-bottom">
+				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|email'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }"
@@ -38,7 +38,7 @@
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
 				</div>
 
-				<div class="uk-margin-small-bottom">
+				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|numeric'"
 							class="c-section-input"
 							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
@@ -91,8 +91,7 @@
 							alert('AXIOS ERROR: ', err)
 							console.log('AXIOS ERROR: ', err)
 						})
-
-						this.$router.push('https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=RLwj8Q+f9y5FAQq28HuOHewkmAE=')
+						window.location('https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=RLwj8Q+f9y5FAQq28HuOHewkmAE=')
 					} else {
 						// validatoк error
 						alert('Please correct all error!')
