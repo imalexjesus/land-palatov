@@ -3,9 +3,7 @@
 		<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 			<button class="uk-modal-close-default" type="button" uk-close></button>
 
-			<form class="c-modal__form uk-form-stacked"
-			@submit.prevent="submitForm"
-			v-if="showForm">
+			<form class="c-modal__form uk-form-stacked" @submit.prevent="submitForm" v-if="showForm">
 				<h2 class="c-section-h2 c-section-h2--small-margin">
 					<span class="c-section-h2--orange">консультация</span>
 				</h2>
@@ -14,7 +12,7 @@
 					<label class="uk-form-label" for="c-modal-konsultaciya__form-name">Ваше имя</label>
 					<div class="uk-inline">
 						<span class="uk-form-icon uk-icon" :class="{'uk-text-danger': errors.has('name') }" uk-icon="icon: user"></span>
-						<input v-validate="'required|alpha'"
+						<input v-validate="{ required: true, regex: /^[а-яА-ЯёЁa-zA-Z0-9]+$/ }"
 							class="uk-input"
 							:class="{'input': true, 'uk-form-danger': errors.has('name') }"
 							id="c-modal-konsultaciya__form-name"
@@ -46,25 +44,29 @@
 					<label class="uk-form-label" for="c-modal-konsultaciya__form-phone">Ваш телефон</label>
 					<div class="uk-inline">
 						<span class="uk-form-icon uk-icon" :class="{'uk-text-danger': errors.has('phone') }" uk-icon="icon: receiver"></span>
-						<input v-validate="'required|numeric'"
+						<input v-validate="'required|min:15'"
 							class="uk-input"
 							:class="{'input': true, 'uk-form-danger': errors.has('phone') }"
 							id="c-modal-konsultaciya__form-phone"
 							name="phone"
 							v-model="postPhone"
 							type="tel"
-						placeholder="+38 555 123456">
+							v-mask="'(0##) ###-##-##'"
+							masked="true"
+						placeholder="(044) 123-45-67">
 					</div>
 					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
 				</div>
 
-				<button class="uk-button uk-button-primary uk-margin-top" :disabled="errors.any()">Получить консультацию</button>
+				<button class="uk-button uk-button-primary uk-margin-top" :disabled="errors.any()">Запишите меня</button>
 
 			</form>
 
-			<div class="uk-alert-success uk-margin-large uk-margin-medium-left uk-margin-medium-right" v-if="!showForm" uk-alert>
-				<h3>Отлично!</h3>
-				<p>Форма успешно отправлена</p>
+			<div class="" v-if="!showForm">
+				<h2 class="c-section-h2 c-section-h2--small-margin">
+					<span class="c-section-h2--orange">Отлично!</span>
+				</h2>
+				<p>Спасибо за обращение. С вами свяжутся в ближайшее время!</p>
 			</div>
 
 		</div>

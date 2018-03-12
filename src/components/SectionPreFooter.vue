@@ -16,37 +16,37 @@
 			<form class="section-prefooter__col section-prefooter__col-form" @submit.prevent="submitForm">
 				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="{ required: true, regex: /^[а-яА-ЯёЁa-zA-Z0-9]+$/ }"
-							class="c-section-input"
-							:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
-							id="section-prefooter__form-name"
-							name="name"
-							v-model="postName"
-							type="text"
+						class="c-section-input"
+						:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
+						id="section-prefooter__form-name"
+						name="name"
+						v-model="postName"
+						type="text"
 						placeholder="Ваше имя*">
 					<div v-show="errors.has('name')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('name') }}</div>
 				</div>
 
 				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|email'"
-							class="c-section-input"
-							:class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }"
-							id="section-prefooter__form-email"
-							name="email"
-							v-model="postEmail"
-							type="email"
+						class="c-section-input"
+						:class="{'input': true,'c-section-input--success': fields.email && fields.email.valid, 'c-section-input--danger': errors.has('email') }"
+						id="section-prefooter__form-email"
+						name="email"
+						v-model="postEmail"
+						type="email"
 						placeholder="Ваш e-mail*">
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('email') }}</div>
 				</div>
 
 				<div class="uk-margin-small-bottom uk-text-center">
 					<input v-validate="'required|min:15'"
-							class="c-section-input"
-							:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
-							id="section-prefooter__form-phone"
-							name="phone"
-							v-model="postPhone"
-							type="tel"
-							v-mask="'(0##) ###-##-##'"
+						class="c-section-input"
+						:class="{'input': true,'c-section-input--success': fields.phone && fields.phone.valid, 'c-section-input--danger': errors.has('phone') }"
+						id="section-prefooter__form-phone"
+						name="phone"
+						v-model="postPhone"
+						type="tel"
+						v-mask="'(0##) ###-##-##'"
 						masked="true"
 						placeholder="Ваш телефон*">
 					<div v-show="errors.has('phone')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('phone') }}</div>
@@ -142,10 +142,6 @@
 					flex: auto;
 					align-items: center;
 					padding:  0 0 4vh;
-				}
-
-				input {
-					// margin-bottom: .6em;
 				}
 
 				.c-modal__form-text-danger {

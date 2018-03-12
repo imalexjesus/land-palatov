@@ -1,27 +1,110 @@
 <template>
-	<div id="c-modal-kupit-videokurs" class="uk-modal-container" uk-modal>
-		<div class="uk-modal-dialog">
+	<div id="c-modal-kupit-videokurs" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 			<button class="uk-modal-close-default" type="button" uk-close></button>
 
-			<div class="c-modal__form">
-				<h2 class="c-section-h2 c-section-h2--small-margin"><span class="c-section-h2--orange">купить видеокурс</span></h2>
+			<form class="c-modal__form uk-form-stacked"	@submit.prevent="submitForm">
+				<h2 class="c-section-h2 c-section-h2--small-margin">
+					<span class="c-section-h2--orange">Купить видеокурс</span>
+				</h2>
 
-				<input class="c-section-input" type="text" placeholder="Ваше имя">
-				<input class="c-section-input" type="email" placeholder="Ваш e-mail">
-				<input class="c-section-input" type="tel" placeholder="Ваш телефон">
+				<div class="uk-margin-top">
+					<label class="uk-form-label" for="c-modal-kupit-videokurs__form-name">Ваше имя</label>
+					<div class="uk-inline">
+						<span class="uk-form-icon uk-icon" :class="{'uk-text-danger': errors.has('name') }" uk-icon="icon: user"></span>
+						<input v-validate="{ required: true, regex: /^[а-яА-ЯёЁa-zA-Z0-9]+$/ }"
+							class="uk-input"
+							:class="{'input': true, 'uk-form-danger': errors.has('name') }"
+							id="c-modal-kupit-videokurs__form-name"
+							name="name"
+							v-model="postName"
+							type="text"
+						placeholder="Ваше имя">
+					</div>
+					<div v-show="errors.has('name')" class="c-modal__form-text-danger">{{ errors.first('name') }}</div>
+				</div>
 
-				<button class="c-section-button">Купить видеокурс</button>
-			</div>
+				<div class="uk-margin-top">
+					<label class="uk-form-label" for="c-modal-kupit-videokurs__form-email">Ваш e-mail</label>
+					<div class="uk-inline">
+						<span class="uk-form-icon uk-icon" uk-icon="icon: mail" :class="{'uk-text-danger': errors.has('email') }"></span>
+						<input v-validate="'required|email'"
+							class="uk-input"
+							:class="{'input': true, 'uk-form-danger': errors.has('email') }"
+							id="c-modal-kupit-videokurs__form-email"
+							name="email"
+							v-model="postEmail"
+							type="email"
+						placeholder="name@domain.com">
+					</div>
+					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
+				</div>
+
+				<div class="uk-margin-top">
+					<label class="uk-form-label" for="c-modal-kupit-videokurs__form-phone">Ваш телефон</label>
+					<div class="uk-inline">
+						<span class="uk-form-icon uk-icon" :class="{'uk-text-danger': errors.has('phone') }" uk-icon="icon: receiver"></span>
+						<input v-validate="'required|min:15'"
+							class="uk-input"
+							:class="{'input': true, 'uk-form-danger': errors.has('phone') }"
+							id="c-modal-kupit-videokurs__form-phone"
+							name="phone"
+							v-model="postPhone"
+							type="tel"
+							v-mask="'(0##) ###-##-##'"
+							masked="true"
+						placeholder="(044) 123-45-67">
+					</div>
+					<div v-show="errors.has('phone')" class="c-modal__form-text-danger">{{ errors.first('phone') }}</div>
+				</div>
+
+				<button class="uk-button uk-button-primary uk-margin-top" :disabled="errors.any()">Купить видеокурс</button>
+			</form>
 		</div>
 	</div>
 </template>
 
 <script>
+	import russian from 'vee-validate/dist/locale/ru'
+	import axios from 'axios'
+
 	export default {
-		name: 'ModalKupitVideokurs'
+		name: 'ModalKupitVideokurs',
+		data: () => ({
+			postName: '',
+			postEmail: '',
+			postPhone: ''
+		}),
+		methods: {
+			submitForm () {
+				this.$validator.validateAll().then(res => {
+					if (res) {
+						// Native form submission is not yet supported
+						axios.post('/send_mail.php', 'page_title=Купить видеокурс' +
+							'&name=' +
+							this.postName +
+							'&email=' +
+							this.postEmail +
+							'&phone=' +
+						this.postPhone).then((res) => {
+							window.location = 'https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=RLwj8Q+f9y5FAQq28HuOHewkmAE='
+							// alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							console.log('RESPONSE RECEIVED: ', res)
+						}).catch((err) => {
+							alert('AXIOS ERROR: ', err)
+							console.log('AXIOS ERROR: ', err)
+						})
+					} else {
+						// validatoк error
+						alert('Please correct all error!')
+					}
+				})
+			}
+		},
+		created () {
+			this.$validator.localize('ru', {
+				messages: russian.messages
+			})
+		}
 	}
 </script>
-
-<style scoped>
-
-</style>

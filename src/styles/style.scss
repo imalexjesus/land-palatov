@@ -16,7 +16,6 @@ a, button, input {
 
 }
 
-
 /*************************
 / COMPONENTS-CLASSES
 ***/
@@ -51,7 +50,7 @@ a, button, input {
 .c-section-button {
 	//background: $color-orange;
 	background: $color-orange;
-	color: $body-color;
+	color: $body-color !important;
 	width: 270px;
 	height: 65px;
 	line-height: 65px;
@@ -66,10 +65,11 @@ a, button, input {
 	}
 
 	@media screen and (max-width: 768px) {
+		font-size: 1.185em;
 		height: 42px;
 		line-height: 42px;
+		padding: 0 10px;
 		width: auto;
-		padding: 0 auto;
 	}
 
 	&--disabled {
@@ -85,11 +85,13 @@ a, button, input {
 	color: #FFF;
 	width: 270px;
 	height: 65px;
+	line-height: 65px;
 	font-size: 1.285em;
 	text-align: center;
 	border: none;
 	transition: all 0.3s ease 0s;
 	border: 2px solid $color-orange;
+	border-radius: 0;
 
 	&::placeholder {
 		color: #FFF;
@@ -117,8 +119,9 @@ a, button, input {
 	@media screen and (max-width: 768px) {
 		font-size: 1em;
 		height: 42px;
+		line-height: 42px;
 		width: auto;
-		padding: 0 auto;
+		padding: 0;
 	}
 }
 .c-section-link-at-button {
@@ -145,7 +148,7 @@ a, button, input {
 	margin: 50px auto .6em;
 
 	@media screen and (max-width: 768px) {
-		font-size: 22px;
+		font-size: 22px !important;
 		text-align: center;
 		margin: 25px auto 15px !important;
 	}
@@ -375,18 +378,27 @@ a, button, input {
 	&__form-text-danger {
 		font-size: .7em;
 		color: #f0506e;
-		max-width: 231px;
+		max-width: 215px;
+		display: inline-flex;
+		margin-top: 2px;
 	}
 
 	&__form {
 		margin-bottom: 3em;
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	&__form,
 	&__uroki {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		// align-items: center;
 		padding: 3em;
 
 		@media screen and (max-width: 768px) {
@@ -401,6 +413,10 @@ a, button, input {
 				color: $body-color;
 			}
 		}
+	}
+
+	.uk-input {
+		position: static;
 	}
 }
 
@@ -477,8 +493,15 @@ a, button, input {
 }
 
 .uk-modal-page {
-
+	//фикс для инпута на ios
 	@media screen and (max-width: 768px) {
+		html,
+		body {
+			-webkit-overflow-scrolling: touch;
+			overflow: auto;
+			height: 100%;
+		}
+
 		body {
 			overflow: hidden !important;
 			position: fixed;
