@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import VueGtm from 'vue-gtm'
 import VueRouter from 'vue-router'
 import VeeValidate from 'vee-validate'
 import VueTheMask from 'vue-the-mask'
@@ -15,6 +16,7 @@ import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 
 UIkit.use(Icons)
+
 Vue.use(VeeValidate)
 Vue.use(VueTheMask)
 
@@ -31,6 +33,11 @@ const router = new VueRouter({
 	mode: 'history',
 	history: true,
 	linkActiveClass: 'uk-active'
+})
+
+Vue.use(VueGtm, {
+	debug: true // Whether or not display console logs debugs (optional)
+	// vueRouter: router // Pass the router instance to automatically sync with router (optional)
 })
 
 /* eslint-disable no-new */

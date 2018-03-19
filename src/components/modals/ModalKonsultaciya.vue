@@ -17,6 +17,7 @@
 							:class="{'input': true, 'uk-form-danger': errors.has('name') }"
 							id="c-modal-konsultaciya__form-name"
 							name="name"
+							autocomplete="name"
 							v-model="postName"
 							type="text"
 						placeholder="Ваше имя">
@@ -35,6 +36,7 @@
 							name="email"
 							v-model="postEmail"
 							type="email"
+							autocomplete="email"
 						placeholder="name@domain.com">
 					</div>
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
@@ -49,6 +51,7 @@
 							:class="{'input': true, 'uk-form-danger': errors.has('phone') }"
 							id="c-modal-konsultaciya__form-phone"
 							name="phone"
+							autocomplete="tel"
 							v-model="postPhone"
 							type="tel"
 							v-mask="'(0##) ###-##-##'"

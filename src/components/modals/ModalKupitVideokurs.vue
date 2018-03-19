@@ -17,6 +17,7 @@
 							:class="{'input': true, 'uk-form-danger': errors.has('name') }"
 							id="c-modal-kupit-videokurs__form-name"
 							name="name"
+							autocomplete="name"
 							v-model="postName"
 							type="text"
 						placeholder="Ваше имя">
@@ -35,6 +36,7 @@
 							name="email"
 							v-model="postEmail"
 							type="email"
+							autocomplete="email"
 						placeholder="name@domain.com">
 					</div>
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger">{{ errors.first('email') }}</div>
@@ -51,6 +53,7 @@
 							name="phone"
 							v-model="postPhone"
 							type="tel"
+							autocomplete="tel"
 							v-mask="'(0##) ###-##-##'"
 							masked="true"
 						placeholder="(044) 123-45-67">
