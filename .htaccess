@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP:SSL} !=1 [NC]
+RewriteRule ^(.*) https://www.ppc-start.info/$1 [L,R=301]
