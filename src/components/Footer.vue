@@ -5,7 +5,7 @@
 			<div class="c-footer__emails uk-visible@m">
 				<i class="fa fa-envelope-o c-footer__icon" aria-hidden="true"></i>
 				<div class="c-footer__emails-list">
-					<a href="mailto:info@ppc-start.com.ua">info@ppc-start.com.ua</a>
+					<a href="mailto:info@ppc-start.info">info@ppc-start.info</a>
 				</div>
 			</div>
 			<div class="c-footer__phones uk-visible@m">

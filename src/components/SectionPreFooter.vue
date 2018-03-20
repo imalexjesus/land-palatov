@@ -9,7 +9,7 @@
 
 				<h2 class="c-section-h3 c-section-h3--small-margin">
 					<span class="c-section-h3--white"><small>Видеокурс по контекстной рекламе</small></span>
-					<span class="c-section-h3--orange">Google Adwords</span> <span class="c-section-h3--white"><small>Стоимость курса - 1200 грн.</small></span>
+					<span class="c-section-h3--orange">Google Adwords</span> <span class="c-section-h3--white"><small>Стоимость курса - 2000 грн.</small></span>
 				</h2>
 			</div>
 

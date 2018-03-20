@@ -3,9 +3,9 @@
 		<div class="l-section-inner l-section-inner--row">
 			<div class="section1__col section1__col-info">
 				<h3 class="c-section-h3 c-section-h3--small-margin">
-					<span class="c-section-h3--white"><small>Видеокурс</small></span>
-					<span class="c-section-h3--orange">по настройке контекстной рекламы Google Adwords</span>
-					<span class="c-section-h3--white"><small>Стоимость курса - 1200 грн.</small></span>
+					<span class="c-section-h3--white"><small>Как получать клиентов из интернета</small></span>
+					<span class="c-section-h3--orange">Видеокурс по правильной настройке Google Adwords</span>
+					<span class="c-section-h3--white"><small>Стоимость курса - 2000 грн.</small></span>
 				</h3>
 				<p class="section1__col-info-text">Обучающий видеокурс по настройке и оптимизации контекстной рекламы Google Adwords для начинающих пользователей.
 
