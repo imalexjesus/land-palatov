@@ -20,6 +20,7 @@
 						:class="{'input': true,'c-section-input--success': fields.name && fields.name.valid, 'c-section-input--danger': errors.has('name') }"
 						id="section-prefooter__form-name"
 						name="name"
+						autocomplete="name"
 						v-model="postName"
 						type="text"
 						placeholder="Ваше имя*">
@@ -34,6 +35,7 @@
 						name="email"
 						v-model="postEmail"
 						type="email"
+						autocomplete="email"
 						placeholder="Ваш e-mail*">
 					<div v-show="errors.has('email')" class="c-modal__form-text-danger uk-text-center">{{ errors.first('email') }}</div>
 				</div>
@@ -46,6 +48,7 @@
 						name="phone"
 						v-model="postPhone"
 						type="tel"
+						autocomplete="tel"
 						v-mask="'(0##) ###-##-##'"
 						masked="true"
 						placeholder="Ваш телефон*">

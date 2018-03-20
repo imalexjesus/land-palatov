@@ -3,15 +3,19 @@
 		<div class="c-header__inner l-section-inner">
 			<a href="/" class="c-header__logo"></a>
 			<div class="c-header__emails uk-visible@m">
-				<a href="mailto:info@ppc-start.com.ua"><i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
+				<a href="mailto:info@ppc-start.com.ua" @click="clickMail"><i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
 				<div class="c-header__emails-list">
+<<<<<<< HEAD
 					<a href="mailto:info@ppc-start.info">info@ppc-start.info</a>
+=======
+					<a href="mailto:info@ppc-start.com.ua" @click="clickMail">info@ppc-start.com.ua</a>
+>>>>>>> d68f62e5fd38e33e2519f821b3f4a73efc9ae001
 				</div>
 			</div>
 			<div class="c-header__phones uk-visible@m">
 				<i class="fa fa-phone c-header__icon" aria-hidden="true"></i>
 				<div class="c-header__phones-list">
-					<a href="tel:380634819393">+38 (063) 481 93 93</a>
+					<a href="tel:380634819393" @click="clickPhone">+38 (063) 481 93 93</a>
 				</div>
 			</div>
 
@@ -22,7 +26,26 @@
 
 <script>
 	export default {
-		name: 'Header'
+		name: 'Header',
+		methods: {
+			clickMail () {
+				this.$gtm.trackEvent({
+					event: 'event', // Event type [default = 'interaction'] (Optional)
+					category: 'email',
+					action: 'click',
+					label: 'clickmail'
+				})
+			},
+
+			clickPhone () {
+				this.$gtm.trackEvent({
+					event: 'event', // Event type [default = 'interaction'] (Optional)
+					category: 'phone',
+					action: 'click',
+					label: 'clickphone'
+				})
+			}
+		}
 	}
 </script>
 
