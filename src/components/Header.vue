@@ -3,7 +3,8 @@
 		<div class="c-header__inner l-section-inner">
 			<a href="/" class="c-header__logo"></a>
 			<div class="c-header__emails uk-visible@m">
-				<a href="mailto:info@ppc-start.com.ua" @click="clickMail"><i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
+				<a href="mailto:info@ppc-start.com.ua" @click="clickMail">
+					<i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
 				<div class="c-header__emails-list">
 					<a href="mailto:info@ppc-start.info">info@ppc-start.info</a>
 				</div>
@@ -15,7 +16,7 @@
 				</div>
 			</div>
 
-			<a href="#c-modal-konsultaciya" class="c-button" uk-toggle>Консультация</a>
+			<a href="#c-modal-konsultaciya" @click="clickKonsult" class="c-button" uk-toggle>Консультация</a>
 		</div>
 	</header>
 </template>
@@ -39,6 +40,14 @@
 					category: 'phone',
 					action: 'click',
 					label: 'clickphone'
+				})
+			},
+			clickKonsult () {
+				this.$gtm.trackEvent({
+					event: 'event', // Event type [default = 'interaction'] (Optional)
+					category: 'question',
+					action: 'click',
+					label: 'clickconsultation'
 				})
 			}
 		}
