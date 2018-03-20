@@ -17,6 +17,9 @@ import Icons from 'uikit/dist/js/uikit-icons'
 
 UIkit.use(Icons)
 
+Vue.use(VueGtm, {
+	debug: true // Whether or not display console logs debugs (optional)
+})
 Vue.use(VeeValidate)
 Vue.use(VueTheMask)
 
@@ -33,11 +36,6 @@ const router = new VueRouter({
 	mode: 'history',
 	history: true,
 	linkActiveClass: 'uk-active'
-})
-
-Vue.use(VueGtm, {
-	debug: true // Whether or not display console logs debugs (optional)
-	// vueRouter: router // Pass the router instance to automatically sync with router (optional)
 })
 
 /* eslint-disable no-new */
