@@ -1,7 +1,11 @@
 <template>
 	<header class="c-header l-section">
 		<div class="c-header__inner l-section-inner">
+
 			<a href="/" class="c-header__logo"></a>
+
+			<img src="../assets/cards.svg" alt="Mastercard and VISA" class="uk-visible@m c-cards">
+
 			<div class="c-header__emails uk-visible@m">
 				<a href="mailto:info@ppc-start.com.ua" @click="clickMail">
 					<i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
@@ -9,6 +13,7 @@
 					<a href="mailto:info@ppc-start.info">info@ppc-start.info</a>
 				</div>
 			</div>
+
 			<div class="c-header__phones uk-visible@m">
 				<i class="fa fa-phone c-header__icon" aria-hidden="true"></i>
 				<div class="c-header__phones-list">

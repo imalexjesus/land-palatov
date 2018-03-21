@@ -15,8 +15,8 @@
 					<span class="uk-visible@m">Получите необходимые знания для быстрого запуска эффективных рекламных кампаний и получайте новых клиентов из интернета для себя или своих клиентов. Уже более 100 предпринимателей, маркетологов и специалистов по контекстной рекламе применили полученные знания на практике</span>
 
 				</p>
-				<button class="c-section-button" type="button" uk-toggle="target: #c-modal-kupit-videokurs">Купить видеокурс</button>
-				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button">Условия покупки</a>
+				<button class="c-section-button" type="button" uk-toggle="target: #c-modal-kupit-videokurs" @click="clickBuy">Купить видеокурс</button>
+				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button" @click="clickUsloviyaPokupki">Условия покупки</a>
 			</div>
 
 			<div class="section1__col section1__col-video">
@@ -28,7 +28,25 @@
 
 <script>
 	export default {
-		name: 'Section1'
+		name: 'Section1',
+		methods: {
+			clickBuy () {
+				this.$gtm.trackEvent({
+					event: 'event', // Event type [default = 'interaction'] (Optional)
+					category: 'buy',
+					action: 'click',
+					label: 'clickcbuy'
+				})
+			},
+			clickUsloviyaPokupki () {
+				this.$gtm.trackEvent({
+					event: 'event', // Event type [default = 'interaction'] (Optional)
+					category: 'terms',
+					action: 'click',
+					label: 'clickcconditions'
+				})
+			}
+		}
 	}
 </script>
 
