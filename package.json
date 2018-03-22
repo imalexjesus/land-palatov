@@ -20,7 +20,7 @@
     "uikit": "^3.0.0-beta.40",
     "vee-validate": "^2.0.4",
     "vue": "^2.5.2",
-    "vue-gtm": "^1.0.2",
+    "vue-analytics": "^5.9.1",
     "vue-router": "^3.0.1",
     "vue-the-mask": "^0.11.1"
   },

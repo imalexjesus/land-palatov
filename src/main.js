@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VueGtm from 'vue-gtm'
+import VueAnalytics from 'vue-analytics'
 import VueRouter from 'vue-router'
 import VeeValidate from 'vee-validate'
 import VueTheMask from 'vue-the-mask'
@@ -17,8 +17,8 @@ import Icons from 'uikit/dist/js/uikit-icons'
 
 UIkit.use(Icons)
 
-Vue.use(VueGtm, {
-	debug: true // Whether or not display console logs debugs (optional)
+Vue.use(VueAnalytics, {
+	id: ['UA-115815270-1']
 })
 Vue.use(VeeValidate)
 Vue.use(VueTheMask)

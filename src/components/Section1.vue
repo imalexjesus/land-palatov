@@ -31,20 +31,10 @@
 		name: 'Section1',
 		methods: {
 			clickBuy () {
-				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
-					category: 'buy',
-					action: 'click',
-					label: 'clickcbuy'
-				})
+				this.$ga.event('buy', 'click')
 			},
 			clickUsloviyaPokupki () {
-				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
-					category: 'terms',
-					action: 'click',
-					label: 'clickcconditions'
-				})
+				this.$ga.event('terms', 'click')
 			}
 		}
 	}

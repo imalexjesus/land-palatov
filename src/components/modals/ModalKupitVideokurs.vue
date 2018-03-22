@@ -90,7 +90,7 @@
 							this.postEmail +
 							'&phone=' +
 						this.postPhone).then((res) => {
-							window.location = 'https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0=&signature=sV5ZyLnzkjj3lkAqkNRhSakVSYM='
+							window.location = 'https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTc2ODk1NDM1MzkzIiwiYW1vdW50IjoiMjAwMCIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC%2B0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0%3D&signature=sV5ZyLnzkjj3lkAqkNRhSakVSYM%3D'
 							// alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
 							console.log('RESPONSE RECEIVED: ', res)
 						}).catch((err) => {

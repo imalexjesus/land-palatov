@@ -31,29 +31,14 @@
 		name: 'Header',
 		methods: {
 			clickMail () {
-				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
-					category: 'email',
-					action: 'click',
-					label: 'clickmail'
-				})
+				this.$ga.event('email', 'click')
 			},
 
 			clickPhone () {
-				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
-					category: 'phone',
-					action: 'click',
-					label: 'clickphone'
-				})
+				this.$ga.event('email', 'click')
 			},
 			clickKonsult () {
-				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
-					category: 'question',
-					action: 'click',
-					label: 'clickconsultation'
-				})
+				this.$ga.event('question', 'click')
 			}
 		}
 	}

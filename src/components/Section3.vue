@@ -52,14 +52,12 @@
 <script>
 	export default {
 		name: 'Section3',
-		clickLesson () {
-			this.$gtm.trackEvent({
-				event: 'event', // Event type [default = 'interaction'] (Optional)
-				category: 'lessons',
-				action: 'click',
-				label: 'clickclesson'
-			})
+		methods: {
+			clickLesson () {
+				this.$ga.event('lessons', 'click')
+			}
 		}
+
 	}
 </script>
 
