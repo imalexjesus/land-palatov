@@ -32,27 +32,26 @@
 		methods: {
 			clickMail () {
 				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
+					event: event, // Event type [default = 'interaction'] (Optional)
 					category: 'email',
-					action: 'click',
-					label: 'clickmail'
+					action: 'click'
 				})
 			},
 
 			clickPhone () {
 				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
+					event: 'interaction', // Event type [default = 'interaction'] (Optional)
 					category: 'phone',
-					action: 'click',
-					label: 'clickphone'
+					action: 'click'
 				})
 			},
 			clickKonsult () {
 				this.$gtm.trackEvent({
-					event: 'event', // Event type [default = 'interaction'] (Optional)
+					event: null, // Event type [default = 'interaction'] (Optional)
 					category: 'question',
 					action: 'click',
-					label: 'clickconsultation'
+					value: 1,
+					noninteraction: false // Optional
 				})
 			}
 		}
