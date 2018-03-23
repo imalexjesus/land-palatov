@@ -8,18 +8,18 @@
 			<div class="c-footer__emails uk-visible@m">
 				<i class="fa fa-envelope-o c-footer__icon" aria-hidden="true"></i>
 				<div class="c-footer__emails-list">
-					<a href="mailto:info@ppc-start.info">info@ppc-start.info</a>
+					<a href="mailto:info@ppc-start.info" @click="clickMail">info@ppc-start.info</a>
 				</div>
 			</div>
 
 			<div class="c-footer__phones uk-visible@m">
 				<i class="fa fa-phone c-footer__icon" aria-hidden="true"></i>
 				<div class="c-footer__phones-list">
-					<a href="tel:380634819393">+38 (063) 481 93 93</a>
+					<a href="tel:380634819393" @click="clickPhone">+38 (063) 481 93 93</a>
 				</div>
 			</div>
 
-			<a href="#c-modal-konsultaciya" class="c-button" uk-toggle>Консультация</a>
+			<a href="#c-modal-konsultaciya"  @click="clickKonsult" class="c-button" uk-toggle>Консультация</a>
 		</div>
 
 	</header>
@@ -27,7 +27,18 @@
 
 <script>
 	export default {
-		name: 'Footer'
+		name: 'Footer',
+		methods: {
+			clickMail () {
+				this.$ga.event('email', 'click')
+			},
+			clickPhone () {
+				this.$ga.event('phone', 'click')
+			},
+			clickKonsult () {
+				this.$ga.event('question', 'click')
+			}
+		}
 	}
 </script>
 

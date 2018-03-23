@@ -57,7 +57,6 @@
 				this.$ga.event('lessons', 'click')
 			}
 		}
-
 	}
 </script>
 

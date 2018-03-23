@@ -102,6 +102,8 @@
 						this.postPhone).then((res) => {
 							this.showForm = false
 							// alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							// alert('Form successfully submitted! RESPONSE RECEIVED: ', res)
+							this.$ga.event('form', 'send')
 							console.log('RESPONSE RECEIVED: ', res)
 						}).catch((err) => {
 							alert('AXIOS ERROR: ', err)

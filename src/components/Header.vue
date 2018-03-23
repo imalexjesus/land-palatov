@@ -33,9 +33,8 @@
 			clickMail () {
 				this.$ga.event('email', 'click')
 			},
-
 			clickPhone () {
-				this.$ga.event('email', 'click')
+				this.$ga.event('phone', 'click')
 			},
 			clickKonsult () {
 				this.$ga.event('question', 'click')
