@@ -16,9 +16,14 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	.red {
 		height: calc(100vh - 80px*2);
 		padding: 40px;
+
+		@media screen and (max-width: 768px) {
+			height: calc(100vh - 64px*2);
+			padding: 20px;
+		}
 	}
 </style>
