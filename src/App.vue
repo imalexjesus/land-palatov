@@ -1,15 +1,16 @@
 <template>
 	<div id="app">
 		<Header />
-		<Section1 />
+		<router-view></router-view>
+<!--		<Section1 />
 		<Section2 />
 		<Section3 />
 		<Section4 />
 		<Section5 />
 		<Section6 />
-		<SectionPreFooter />
+		<SectionPreFooter />-->
 		<Footer />
-		<!--<router-view></router-view>-->
+
 		<ModalKonsultaciya class="c-modal" />
 		<ModalKupitVideokurs class="c-modal" />
 		<ModalUsloviyaPokupki class="c-modal" />
@@ -35,14 +36,19 @@
 </template>
 
 <script>
+	import Vue from 'vue'
+	import VueRouter from 'vue-router'
+
+	import DefContent from '@/DefContent.vue'
+	import Red from '@/red.vue'
 	import Header from '@/components/Header'
-	import Section1 from '@/components/Section1'
-	import Section2 from '@/components/Section2'
-/*	const Section3 = () => import('@/components/Section3')
-	const Section4 = () => import('@/components/Section4')
-	const Section5 = () => import('@/components/Section5')
-	const Section6 = () => import('@/components/Section6') */
-	const SectionPreFooter = () => import('@/components/SectionPreFooter')
+	// import Section1 from '@/components/Section1.vue'
+	// import Section2 from '@/components/Section2'
+	/*	const Section3 = () => import('@/components/Section3')
+	 const Section4 = () => import('@/components/Section4')
+	 const Section5 = () => import('@/components/Section5')
+	 const Section6 = () => import('@/components/Section6') */
+	// const SectionPreFooter = () => import('@/components/SectionPreFooter')
 	const Footer = () => import('@/components/Footer')
 
 	const ModalKonsultaciya = () => import('@/components/modals/ModalKonsultaciya')
@@ -50,17 +56,33 @@
 	const ModalUsloviyaPokupki = () => import('@/components/modals/ModalUsloviyaPokupki')
 	const ModalUroki = () => import('@/components/modals/ModalUroki')
 
+	Vue.use(VueRouter)
+
+	var base = '/'
+	if (location.pathname && location.pathname !== '/') {
+		base = location.pathname.split('/').slice(0, -1).join('/')
+	}
+
+	const router = new VueRouter({
+		base: __dirname,
+		mode: 'history',
+		routes: [
+			{
+				path: base,
+				component: DefContent
+			},
+			{
+				path: '/red',
+				component: Red
+			}
+		]
+	})
+
 	export default {
 		name: 'app',
+		router,
 		components: {
 			Header,
-			Section1,
-			Section2,
-			Section3: () => import('@/components/Section3'),
-			Section4: () => import('@/components/Section4'),
-			Section5: () => import('@/components/Section5'),
-			Section6: () => import('@/components/Section6'),
-			SectionPreFooter,
 			Footer,
 			ModalKonsultaciya,
 			ModalKupitVideokurs,
