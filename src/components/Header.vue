@@ -10,7 +10,7 @@
 				<a href="mailto:info@ppc-start.com.ua" @click="clickMail">
 					<i class="fa fa-envelope-o c-header__icon" aria-hidden="true"></i></a>
 				<div class="c-header__emails-list">
-					<a href="mailto:info@ppc-start.info">info@ppc-start.info</a>
+					<a href="mailto:info@ppc-start.info" @click="clickMail">info@ppc-start.info</a>
 				</div>
 			</div>
 

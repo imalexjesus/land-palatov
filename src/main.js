@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueAnalytics from 'vue-analytics'
-import VueRouter from 'vue-router'
+// import VueRouter from 'vue-router'
 import VeeValidate from 'vee-validate'
 import VueTheMask from 'vue-the-mask'
 
@@ -25,25 +25,30 @@ Vue.use(VueTheMask)
 
 Vue.config.productionTip = true
 
-var base = '/'
-
+// Vue.use(VueRouter)
+/* var base = '/'
 if (location.pathname && location.pathname !== '/') {
 	base = location.pathname.split('/').slice(0, -1).join('/')
-}
-
-const router = new VueRouter({
+} */
+/* const router = new VueRouter({
 	base,
 	mode: 'history',
 	history: true,
 	linkActiveClass: 'uk-active'
-})
+//	base: __dirname,
+//	routes: [
+//		{ path: '/', component: App },
+//		{ path: '/red', component: Red }
+//	]
+}) */
 
 /* eslint-disable no-new */
 new Vue({
+	// BaseVue,
+	// template: '<router-view></router-view>'
 	el: '#app',
-	router,
+	template: '<App/>',
 	components: {
 		App
-	},
-	template: '<App/>'
+	}
 })
