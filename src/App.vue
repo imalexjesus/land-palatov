@@ -59,9 +59,9 @@
 	Vue.use(VueRouter)
 
 	var base = '/'
-	if (location.pathname && location.pathname !== '/') {
+/*	if (location.pathname && location.pathname !== '/') {
 		base = location.pathname.split('/').slice(0, -1).join('/')
-	}
+	} */
 
 	const router = new VueRouter({
 		base: __dirname,

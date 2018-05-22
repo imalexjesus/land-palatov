@@ -61,7 +61,7 @@
 					:class="{'c-section-button--disabled': errors.any() }"
 					@click.prevent="submitForm ()">Купить видеокурс</a>
 				<!-- <button class="c-section-button" :disabled="errors.any()">Купить видеокурс</button> -->
-				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button">Условия покупки</a>
+				<a uk-toggle href="#c-modal-usloviya-pokupki" class="c-section-link-at-button uk-text-center">Условия покупки</a>
 			</form>
 		</div>
 	</section>
